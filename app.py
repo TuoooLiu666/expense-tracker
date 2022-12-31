@@ -1,9 +1,9 @@
-import calendar  # Core Python Module
-from datetime import datetime  # Core Python Module
+import calendar  
+from datetime import datetime  
 
-import plotly.graph_objects as go  # pip install plotly
-import streamlit as st  # pip install streamlit
-from streamlit_option_menu import option_menu  # pip install streamlit-option-menu
+from plotly import graph_objects as go  
+import streamlit as st  
+from streamlit_option_menu import option_menu  
 
 import database as db  # local import
 
@@ -12,7 +12,7 @@ incomes = ["Salary", "Blog", "Other Income"]
 expenses = ["Rent", "Utilities", "Groceries", "Car", "Other Expenses", "Saving"]
 currency = "USD"
 page_title = "Income and Expense Tracker"
-page_icon = ":money_with_wings:"  # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+page_icon = ":money_with_wings:"  
 layout = "centered"
 # --------------------------------------
 
@@ -31,21 +31,11 @@ def get_all_periods():
     return periods
 
 
-# --- HIDE STREAMLIT STYLE ---
-hide_st_style = """
-            <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
-
 # --- NAVIGATION MENU ---
 selected = option_menu(
     menu_title=None,
     options=["Data Entry", "Data Visualization"],
-    icons=["pencil-fill", "bar-chart-fill"],  # https://icons.getbootstrap.com/
+    icons=["pencil", "bar-chart"],  
     orientation="horizontal",
 )
 
